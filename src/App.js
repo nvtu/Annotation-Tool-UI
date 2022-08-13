@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Layout } from 'antd'
-import HeaderContainer from './containers/headerContainer'
+import HeaderContainer from './containers/header/headerContainer'
 
 
 const { Header, Content } = Layout;
