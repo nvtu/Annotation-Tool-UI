@@ -1,0 +1,1 @@
+export const TITLE_BACKGROUND_COLOR = "#f6d8ae"
