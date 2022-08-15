@@ -34,11 +34,11 @@ function GalleriaContainer(props) {
 
 
     const itemTemplate = (item) => {
-        return <img src={item} style={{ width: '100%', display: 'block' }} />
+        return <img src={item} style={{ width: "100%", height: 330, display: 'block' }} />
     }
 
     const thumbnailTemplate = (item) => {
-        return <img src={item} style={{ width: '100%', display: 'block' }} />
+        return <img src={item} style={{ width: "100%", height: 60, display: 'block' }} />
     }
 
 
@@ -55,7 +55,7 @@ function GalleriaContainer(props) {
                 }}
             >
                 <Galleria
-                    style={{ width: "28vw", height: "25vw" }}
+                    style={{ width: "28vw", marginTop: 20 }}
                     value={images}
                     responsiveOptions={responsiveOptions}
                     numVisible={5}
