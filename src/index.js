@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals'
 import 'antd/dist/antd.css'
+import { Provider } from 'react-redux'
+import store from './reducers/store'
 
 
 
@@ -23,7 +25,9 @@ root.render(
 		<script src="https://unpkg.com/primereact/galleria/galleria.min.js"></script>
 		<script src="https://unpkg.com/primereact/slider/slider.min.js"></script>
 
-		<App />
+		<Provider store={store}>
+			<App />
+		</Provider>
 	</React.StrictMode>
 );
 

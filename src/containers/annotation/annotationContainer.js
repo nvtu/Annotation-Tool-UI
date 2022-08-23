@@ -10,8 +10,7 @@ function AnnotationContainer(props) {
     return (
         <>
             <Row style={{
-                paddingTop: 64,
-                height: "75vh",
+                height: "65vh",
                 borderBottom: "1px solid #ccc",
             }}>
                 <Col flex="auto" wrap={true} justify="center">

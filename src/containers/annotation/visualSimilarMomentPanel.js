@@ -2,24 +2,10 @@ import AnnotationTitle from '../../components/contentContainers/annotation/annot
 import { PLACEHOLDER_IMAGE } from '../../constants/dummies';
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
+import { connect } from 'react-redux';
 
 
 function VisualSimilarMomentPanel(props) {
-    const images = [
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-    ]
-
 
     return (
         <div>
@@ -32,7 +18,7 @@ function VisualSimilarMomentPanel(props) {
             }}>
                 <ImageList sx={{ width: 400, height: "50vh", position: 'absolute', top: "13%", margin: 0 }} cols={3} rowHeight={120}>
                     {
-                        images.map((image, index) => (
+                        props.visualSimilarMoments.similarImages.map((image, index) => (
                             <ImageListItem key={index}>
                                 <img 
                                     src={`${image}`}
@@ -46,4 +32,9 @@ function VisualSimilarMomentPanel(props) {
     )
 }
 
-export default VisualSimilarMomentPanel;
+
+const mapStatesToProps = (state) => ({
+    visualSimilarMoments: state.annotationVisualSimilarMoments,
+})
+
+export default connect(mapStatesToProps)(VisualSimilarMomentPanel);

@@ -1,11 +1,14 @@
 import { PLACEHOLDER_IMAGE } from '../../../constants/dummies';
 import { Row, Col, Typography, Space } from 'antd';
+import { connect } from 'react-redux'
 
 
 const { Title, Text } = Typography;
 
 
 function InformationPanel(props) {
+    const { user, date, localTime, utcTime, currentImageUrl } = props.data
+
     return (
         <Space
             style={{
@@ -17,23 +20,23 @@ function InformationPanel(props) {
         >
             <img
                 style={{ width: "100%", height: "20vh" }}
-                src={PLACEHOLDER_IMAGE} />
+                src={currentImageUrl} />
             <Col>
                 <Row justify='space-between'>
                     <Title level={5}>User:&nbsp;</Title>
-                    <Text> nvtu</Text>
+                    <Text> {user}</Text>
                 </Row>
                 <Row justify='space-between'>
                     <Title level={5}>Date:&nbsp;</Title>
-                    <Text>2022-08-15</Text>
+                    <Text>{date}</Text>
                 </Row>
                 <Row justify='space-between'>
                     <Title level={5}>Local Time:&nbsp;</Title>
-                    <Text>11:48:00</Text>
+                    <Text>{localTime}</Text>
                 </Row>
                 <Row justify='space-between'>
                     <Title level={5}>UTC Time:&nbsp;</Title>
-                    <Text>10:48:00</Text>
+                    <Text>{utcTime}</Text>
                 </Row>
             </Col>
         </Space>
@@ -41,4 +44,9 @@ function InformationPanel(props) {
 }
 
 
-export default InformationPanel;
+const mapStatesToProps = (state) => ({
+    data: state.annotationMetadata,
+})
+
+
+export default connect(mapStatesToProps)(InformationPanel);

@@ -1,21 +1,11 @@
 import AnnotationTitle from "../../components/contentContainers/annotation/annotationTitle";
 import { PLACEHOLDER_IMAGE } from '../../constants/dummies';
 import { Galleria } from "primereact/galleria";
+import { connect } from 'react-redux';
 
 
 function GalleriaContainer(props) {
-    const images = [
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-        PLACEHOLDER_IMAGE,
-    ]
+    const { user, date, localTime } = props.metadata
 
     const responsiveOptions = [
         {
@@ -34,7 +24,7 @@ function GalleriaContainer(props) {
 
 
     const itemTemplate = (item) => {
-        return <img src={item} style={{ width: "100%", height: 330, display: 'block' }} />
+        return <img src={item} style={{ width: "100%", height: 340, display: 'block' }} />
     }
 
     const thumbnailTemplate = (item) => {
@@ -44,7 +34,7 @@ function GalleriaContainer(props) {
 
     return (
         <div>
-            <AnnotationTitle title={"User: nvtu - Date: 2022-08-14"} />
+            <AnnotationTitle title={`User: ${user} - Date: ${date} - Local Time: ${localTime}`} />
             <div
                 style={{
                     position: "absolute",
@@ -55,8 +45,8 @@ function GalleriaContainer(props) {
                 }}
             >
                 <Galleria
-                    style={{ width: "28vw", marginTop: 20 }}
-                    value={images}
+                    style={{ width: "28vw", marginTop: 22 }}
+                    value={props.galleriaImages.galleriaImages}
                     responsiveOptions={responsiveOptions}
                     numVisible={5}
                     item={itemTemplate}
@@ -68,4 +58,9 @@ function GalleriaContainer(props) {
 }
 
 
-export default GalleriaContainer;
+const mapStatesToProps = (state) => ({
+    galleriaImages: state.annotationGalleriaImages,
+    metadata: state.annotationMetadata,
+})
+
+export default connect(mapStatesToProps)(GalleriaContainer);

@@ -46,6 +46,17 @@ function UserModal(props) {
                 >
                     <Input />
                 </Form.Item>
+                <Form.Item
+                    name='password'
+                    label="Password"
+                    placeholder="Password"
+                    rules={[{
+                        required: true,
+                        message: 'Please input the password!',
+                    }]}
+                >
+                    <Input />
+                </Form.Item>
             </Form>
         </Modal>
     )

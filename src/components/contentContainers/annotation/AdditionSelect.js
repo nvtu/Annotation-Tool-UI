@@ -18,18 +18,24 @@ function AdditionSelect(props) {
 
     const addItem = (e) => {
         e.preventDefault();
-        setItems([...items, name || `New item ${index++}`]);
+        setItems([...props.items, name || `New item ${index++}`]);
         setName('');
         setTimeout(() => {
             inputRef.current?.focus();
         }, 0);
     };
 
+    const onSearch = (value) => {
+
+    }
+
     return (
         <Select
             style={{
                 width: 300,
             }}
+            showSearch
+            onSearch={onSearch}
             placeholder={props.placeholder}
             dropdownRender={(menu) => (
                 <>
@@ -57,7 +63,7 @@ function AdditionSelect(props) {
                 </>
             )}
         >
-            {items.map((item) => (
+            {props.items.map((item) => (
                 <Option key={item}>{item}</Option>
             ))}
         </Select>

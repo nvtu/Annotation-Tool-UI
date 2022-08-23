@@ -1,9 +1,11 @@
 import { Typography, Row, Col, Space } from 'antd'
+import { connect } from 'react-redux'
 
 
 const { Title, Text } = Typography;
 
 function PhysiologicalInformationPanel(props) {
+    const { heartRate, bvp, eda, temp } = props.data
 
     return (
         <Space direction="vertical"
@@ -17,24 +19,28 @@ function PhysiologicalInformationPanel(props) {
             <Col offset={0}>
                 <Row justify='space-between'>
                     <Title level={5}>Heart Rate:&nbsp;</Title>
-                    <Text>70 - 100 (80, 1.25)</Text>
+                    <Text>{heartRate.min} - {heartRate.max} ({heartRate.mean}, {heartRate.std})</Text>
                 </Row>
                 <Row justify='space-between'>
                     <Title level={5}>Blood Volume Pulse:&nbsp;</Title>
-                    <Text>0.04 - 0.8 (0.4, 4.5)</Text>
+                    <Text>{bvp.min} - {bvp.max} ({bvp.mean}, {bvp.std})</Text>
                 </Row>
                 <Row justify='space-between'>
                     <Title level={5}>Galvanic Skin Response:&nbsp;</Title>
-                    <Text>0.04 - 0.8 (0.4, 4.5)</Text>
+                    <Text>{eda.min} - {eda.max} ({eda.mean}, {eda.std})</Text>
                 </Row>
                 <Row justify='space-between'>
                     <Title level={5}>Skin Temperature:&nbsp;</Title>
-                    <Text>0.04 - 0.8 (0.4, 4.5)</Text>
+                    <Text>{temp.min} - {temp.max} ({temp.mean}, {temp.std})</Text>
                 </Row>
             </Col>
         </Space>
     )
 }
 
+const mapStatesToProps = (state) => ({
+    data: state.annotationPhysiologicalData,
+})
 
-export default PhysiologicalInformationPanel
+
+export default connect(mapStatesToProps)(PhysiologicalInformationPanel)
