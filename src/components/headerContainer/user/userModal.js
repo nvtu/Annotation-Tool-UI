@@ -18,7 +18,7 @@ function UserModal(props) {
                     .validateFields()
                     .then((values) => {
                         form.resetFields();
-                        props.onUserModalSubmit(values);
+                        props.onSubmit(values);
                      })
                     .catch((info) => {
                         console.log('Validate Failed:', info);

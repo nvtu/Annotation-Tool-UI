@@ -1,9 +1,15 @@
 import { Drawer } from 'antd';
+import { connect } from 'react-redux'
 
 
 function DrawerPanel(props) {
     return (
-        <Drawer title="Basic Drawer" placement="right" onClose={props.onClose} visible={props.visible}>
+        <Drawer title={`Welcome user: ${props.user.username}`}
+            placement="right"
+            onClose={props.onClose}
+            visible={props.visible}
+        >
+            
             <p>Some contents...</p>
             <p>Some contents...</p>
             <p>Some contents...</p>
@@ -12,4 +18,8 @@ function DrawerPanel(props) {
 }
 
 
-export default DrawerPanel;
+const mapStatesToProps = (states) => ({
+    user: states.user,
+})
+
+export default connect(mapStatesToProps)(DrawerPanel);

@@ -61,6 +61,7 @@ function GalleriaContainer(props) {
 const mapStatesToProps = (state) => ({
     galleriaImages: state.annotationGalleriaImages,
     metadata: state.annotationMetadata,
+    user: state.user,
 })
 
 export default connect(mapStatesToProps)(GalleriaContainer);

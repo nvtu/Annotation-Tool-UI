@@ -7,6 +7,7 @@ import { galleriaImagesReducer } from "./annotation/galleriaImages";
 import { visualSimilarMomentsReducer } from "./annotation/visualSimilarMoments";
 import { physiologicalDataReducer } from "./annotation/physiologicalData";
 import { annotationListDataReducer } from "./annotation/annotationListData";
+import { userReducer } from "./user";
 
 
 export default configureStore({
@@ -20,6 +21,7 @@ export default configureStore({
         annotationListData: annotationListDataReducer, // Reducer to store the list of annotation choices
         
         // OTHER REDUCERS
+        user: userReducer,
     },
     middleware: [
         thunk,

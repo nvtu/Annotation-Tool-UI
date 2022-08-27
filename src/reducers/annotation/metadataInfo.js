@@ -2,7 +2,6 @@ import { PLACEHOLDER_IMAGE } from "../../constants/dummies";
 
 
 const initialState = {
-    user: '',
     date: '',
     localTime: '',
     utcTime: '',
