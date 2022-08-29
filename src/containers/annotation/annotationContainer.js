@@ -24,7 +24,11 @@ function AnnotationContainer(props) {
                     <VisualSimilarMomentPanel />
                 </Col>
             </Row>
-            <Row>
+            <Row
+                style={{
+                    height: "25vh",
+                }}
+            >
                 <Col span={8} offset={0} order={0}>
                     <InformationPanel />
                 </Col>

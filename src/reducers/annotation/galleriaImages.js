@@ -20,6 +20,16 @@ const initialState = {
 
 export const galleriaImagesReducer = (state = initialState, action) => {
     switch (action.type) {
+        case 'SET_GALLERIA_IMAGES':
+            return {
+                ...state,
+                galleriaImages: action.galleriaImages,
+            }
+        case 'SET_GALLERIA_CURRENT_INDEX':
+            return {
+                ...state,
+                currentIndex: action.currentIndex,
+            }
         default:
             return state;
     }

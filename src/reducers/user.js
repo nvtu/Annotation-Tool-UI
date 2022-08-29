@@ -1,7 +1,7 @@
 const initialState = {
-    'username': '',
-    'accessToken': '',
-    'refreshToken': '',
+    username: '',
+    accessToken: '',
+    refreshToken: '',
 }
 
 

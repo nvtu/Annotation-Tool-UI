@@ -55,7 +55,7 @@ function UserModal(props) {
                         message: 'Please input the password!',
                     }]}
                 >
-                    <Input />
+                    <Input.Password />
                 </Form.Item>
             </Form>
         </Modal>

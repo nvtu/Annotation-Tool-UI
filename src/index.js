@@ -12,6 +12,8 @@ import store from './reducers/store'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
+
+	<Provider store={store}>
 		<link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css" />
 		<link rel="stylesheet" href="https://unpkg.com/primereact/resources/themes/lara-light-indigo/theme.css" />
 		<link rel="stylesheet" href="https://unpkg.com/primereact/resources/primereact.min.css" />
@@ -24,10 +26,8 @@ root.render(
 		<script src="https://unpkg.com/primereact/core/core.min.js"></script>
 		<script src="https://unpkg.com/primereact/galleria/galleria.min.js"></script>
 		<script src="https://unpkg.com/primereact/slider/slider.min.js"></script>
-
-		<Provider store={store}>
-			<App />
-		</Provider>
+		<App />
+	</Provider>
 	</React.StrictMode>
 );
 

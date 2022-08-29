@@ -7,7 +7,7 @@ const { Title, Text } = Typography;
 
 
 function InformationPanel(props) {
-    const { user, date, localTime, utcTime, currentImageUrl } = props.data
+    const { date, localTime, utcTime, currentOtherImageUrl } = props.data
 
     return (
         <Space
@@ -20,11 +20,11 @@ function InformationPanel(props) {
         >
             <img
                 style={{ width: "100%", height: "20vh" }}
-                src={currentImageUrl} />
+                src={currentOtherImageUrl} />
             <Col>
                 <Row justify='space-between'>
                     <Title level={5}>User:&nbsp;</Title>
-                    <Text> {user}</Text>
+                    <Text> {props.user.username}</Text>
                 </Row>
                 <Row justify='space-between'>
                     <Title level={5}>Date:&nbsp;</Title>
@@ -46,6 +46,7 @@ function InformationPanel(props) {
 
 const mapStatesToProps = (state) => ({
     data: state.annotationMetadata,
+    user: state.user,
 })
 
 

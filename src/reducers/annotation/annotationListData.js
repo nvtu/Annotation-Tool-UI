@@ -1,9 +1,9 @@
 const initialState = {
-    location: ['Dublin City University',
+    locationList: ['Dublin City University',
         'Home',
     ],
-    stress: ['Relaxed', 'Low Stress', 'Medium Stress', 'High Stress'],
-    activity: ['Sitting', 'Walking', 'Running', 'Standing', 'Cycling', 'Driving', 'Riding', 'Hiking', 'Swimming', 'Biking', 'Other'],
+    stressLevelList: ['Relaxed', 'Low Stress', 'Medium Stress', 'High Stress'],
+    activityList: ['Sitting', 'Walking', 'Running', 'Standing', 'Cycling', 'Driving', 'Riding', 'Hiking', 'Swimming', 'Biking', 'Other'],
 }
 
 

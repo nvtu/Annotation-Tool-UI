@@ -1,0 +1,1 @@
+export const DEFAULT_GALLERIA_CURRENT_INDEX = 0

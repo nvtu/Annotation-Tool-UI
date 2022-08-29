@@ -29,6 +29,8 @@ function UserSelectionButton(props) {
                     })
                     return
                 }
+                
+                // Set session info to the store
                 props.dispatch(
                     setUserInfo(
                         username,
@@ -36,6 +38,13 @@ function UserSelectionButton(props) {
                         response.refresh_token
                     )
                 )
+
+                // Add session info to the local storage
+                localStorage.setItem('username', username)
+                localStorage.setItem('refreshToken', response.refresh_token)
+                localStorage.setItem('accessToken', response.access_token)
+
+
                 notification.success({
                     placement: "rightBottom",
                     message: "Login successfully!"

@@ -28,6 +28,14 @@ const initialState = {
 
 export const physiologicalDataReducer = (state = initialState, action) => {
     switch (action.type) {
+        case "SET_PHYSIO_DATA":
+            return {
+                ...state,
+                heartRate: action.heartRate,
+                bvp: action.bvp,
+                eda: action.eda,
+                temp: action.temp,
+            }
         default:
             return state;
     }

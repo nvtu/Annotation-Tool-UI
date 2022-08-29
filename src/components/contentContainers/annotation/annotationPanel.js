@@ -7,7 +7,7 @@ const { Title, Text } = Typography;
 
 function AnnotationPanel(props) {
 
-    const { location, stress, activity } = props.annotationListData
+    const { locationList, stressLevelList, activityList } = props.annotationListData
 
     return (
         <Space direction="vertical"
@@ -29,7 +29,8 @@ function AnnotationPanel(props) {
                 >
                     <Title level={5}>Location:&nbsp;</Title>
                     <AdditionSelect 
-                        items={location}
+                        value={0}
+                        items={locationList}
                         placeholder="Please select location"
                     />
                 </Row>
@@ -40,14 +41,14 @@ function AnnotationPanel(props) {
                 >
                     <Title level={5}>Stress:&nbsp;</Title>
                     <AdditionSelect 
-                        items={stress}
+                        items={stressLevelList}
                         placeholder="Please select stress level"
                     />
                 </Row>
                 <Row justify='space-between'>
                     <Title level={5}>Activity:&nbsp;</Title>
                     <AdditionSelect 
-                        items={activity}
+                        items={activityList}
                         placeholder="Please select activity"
                     />
                 </Row>
