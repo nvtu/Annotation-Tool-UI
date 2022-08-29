@@ -29,7 +29,6 @@ function AnnotationPanel(props) {
                 >
                     <Title level={5}>Location:&nbsp;</Title>
                     <AdditionSelect 
-                        value={0}
                         items={locationList}
                         placeholder="Please select location"
                     />

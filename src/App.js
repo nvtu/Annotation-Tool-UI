@@ -61,7 +61,7 @@ function App(props) {
 				>
 					<Routes>
 						<Route exact path='/' element={<HomeContainer />} />
-						<Route exact path='/annotation' element={<AnnotationContainer />} />
+						<Route exact path='/annotate' element={<AnnotationContainer />} />
 						<Route exact path='/upload' element={<UploadPageContainer />} />
 					</Routes>
 

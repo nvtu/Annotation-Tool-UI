@@ -7,7 +7,7 @@ let index = 0;
 
 function AdditionSelect(props) {
     const [items, setItems] = useState(['jack', 'lucy']);
-    const [name, setName] = useState('');
+    const [name, setName] = useState('Home');
     const inputRef = useRef(null);
 
 
@@ -34,6 +34,7 @@ function AdditionSelect(props) {
             style={{
                 width: 300,
             }}
+            value={'FUCK'}
             showSearch
             onSearch={onSearch}
             placeholder={props.placeholder}
