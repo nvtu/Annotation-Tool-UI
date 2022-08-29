@@ -20,7 +20,7 @@ function GalleriaContainer(props) {
 
 
     useEffect(() => {
-        if (props.user.username !== '') {
+        if (props.user.username !== '' && date !== '') {
             if (galleriaImages.length > 0 && currentIndex >= 0) {
                 const currentImageId = galleriaImages[currentIndex]
                 const imageName = currentImageId.split('/').pop()
@@ -56,7 +56,7 @@ function GalleriaContainer(props) {
                 })
             }
         }
-    }, [currentIndex, galleriaImages])
+    }, [currentIndex, galleriaImages, date])
 
     const responsiveOptions = [
         {
