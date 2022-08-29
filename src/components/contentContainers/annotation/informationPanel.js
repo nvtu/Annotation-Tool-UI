@@ -12,7 +12,8 @@ function InformationPanel(props) {
     return (
         <Space
             style={{
-                height: "25vh",
+                position: "relative",
+                height: "100%",
                 borderRight: "1px solid #ccc",
                 paddingRight: 70,
             }}

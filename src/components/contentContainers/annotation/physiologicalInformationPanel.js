@@ -10,8 +10,8 @@ function PhysiologicalInformationPanel(props) {
     return (
         <Space direction="vertical"
             style={{
-                height: '25vh',
-                display: "flex",
+                height: '100%',
+                display: "relative",
                 justifyContent: "center",
                 paddingLeft: 80,
             }}

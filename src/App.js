@@ -55,6 +55,7 @@ function App(props) {
 
 				<Content
 					style={{
+						height: "35vh",
 						paddingTop: 64,
 					}}
 				>

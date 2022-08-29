@@ -26,7 +26,8 @@ function AnnotationContainer(props) {
             </Row>
             <Row
                 style={{
-                    height: "25vh",
+                    display: "flex",
+                    height: "100%",
                 }}
             >
                 <Col span={8} offset={0} order={0}>
