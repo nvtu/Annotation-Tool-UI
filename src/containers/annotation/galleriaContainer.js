@@ -90,7 +90,7 @@ function GalleriaContainer(props) {
 
     return (
         <div>
-            <AnnotationTitle title={`User: ${props.user.username} - Date: ${date} - Local Time: ${localTime}`} />
+            <AnnotationTitle title={`User: ${props.user.username} - Date: ${date} - Local Time: ${localTime} - Item: ${currentIndex + 1} / ${galleriaImages.length}`} />
             <div
                 style={{
                     position: "absolute",

@@ -28,7 +28,6 @@ function UploadPageContainer(props) {
 
     const onChange = (info) => {
         const { status } = info.file;
-        console.log(status, info)
 
         if (status !== 'uploading') {
             console.log(info.file, info.fileList);
